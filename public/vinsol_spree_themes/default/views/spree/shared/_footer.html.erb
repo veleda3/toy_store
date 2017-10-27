@@ -4,7 +4,14 @@
       <div class="row">
         <div class="col-md-8 col-md-offset-2">
           <div class="text-center common-heading"> Subscribe to Our Newsletter </div>
-          <p class="text-center">New products, new ideas and a whole bunch of madness delivered to your inbox as it happens!</p>
+          <p class="text-center">New products, New price deals, and new cool ideas for the christmas season!</p>
+          <% form_tag(newsletter_subscriptions_create_path, :method => "post") do %>
+              <%= label_tag(:name, "Name:") %>
+              <%= text_field_tag(:name) %>
+              <%= label_tag(:email, "Email:") %>
+              <%= text_field_tag(:email) %>
+              <%= submit_tag("Search") %>
+          <% end %>
           <form>
             <div class="row">
               <div class="col-sm-5 form-group">

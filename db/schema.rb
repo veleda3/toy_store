@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171027184768) do
+ActiveRecord::Schema.define(version: 20171027211636) do
 
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string   "slug",                      null: false
@@ -24,6 +24,14 @@ ActiveRecord::Schema.define(version: 20171027184768) do
     t.index ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type"
     t.index ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id"
     t.index ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type"
+  end
+
+  create_table "newsletter_subscriptions", force: :cascade do |t|
+    t.string   "email"
+    t.boolean  "active",     default: true
+    t.text     "message"
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
   end
 
   create_table "spree_addresses", force: :cascade do |t|
@@ -207,6 +215,14 @@ ActiveRecord::Schema.define(version: 20171027184768) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.index ["source_id", "source_type"], name: "index_spree_log_entries_on_source_id_and_source_type"
+  end
+
+  create_table "spree_newsletter_subscriptions", force: :cascade do |t|
+    t.string   "email"
+    t.boolean  "active",     default: true
+    t.text     "message"
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
   end
 
   create_table "spree_option_type_prototypes", force: :cascade do |t|
