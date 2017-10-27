@@ -33,6 +33,7 @@ gem 'spree_auth_devise', '3.2'
 gem 'spree_gateway', '3.2'
 gem 'vinsol_spree_themes', git: 'https://github.com/vinsol-spree-contrib/spree_themes.git', branch: '3-2-stable'
 gem 'spree_contact_us', :git => 'https://github.com/spree-contrib/spree_contact_us'
+gem 'spree_reviews', github: 'spree-contrib/spree_reviews'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
