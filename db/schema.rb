@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171027181252) do
+ActiveRecord::Schema.define(version: 20171027184768) do
 
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string   "slug",                      null: false
@@ -134,6 +134,18 @@ ActiveRecord::Schema.define(version: 20171027181252) do
     t.integer  "stock_location_id"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
+  end
+
+  create_table "spree_feedback_reviews", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "review_id",                 null: false
+    t.integer  "rating",     default: 0
+    t.text     "comment"
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+    t.string   "locale",     default: "en"
+    t.index ["review_id"], name: "index_spree_feedback_reviews_on_review_id"
+    t.index ["user_id"], name: "index_spree_feedback_reviews_on_user_id"
   end
 
   create_table "spree_gateways", force: :cascade do |t|
@@ -383,7 +395,7 @@ ActiveRecord::Schema.define(version: 20171027181252) do
   end
 
   create_table "spree_products", force: :cascade do |t|
-    t.string   "name",                 default: "",   null: false
+    t.string   "name",                                         default: "",    null: false
     t.text     "description"
     t.datetime "available_on"
     t.datetime "deleted_at"
@@ -392,11 +404,13 @@ ActiveRecord::Schema.define(version: 20171027181252) do
     t.string   "meta_keywords"
     t.integer  "tax_category_id"
     t.integer  "shipping_category_id"
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
-    t.boolean  "promotionable",        default: true
+    t.datetime "created_at",                                                   null: false
+    t.datetime "updated_at",                                                   null: false
+    t.boolean  "promotionable",                                default: true
     t.string   "meta_title"
     t.datetime "discontinue_on"
+    t.decimal  "avg_rating",           precision: 7, scale: 5, default: "0.0", null: false
+    t.integer  "reviews_count",                                default: 0,     null: false
     t.index ["available_on"], name: "index_spree_products_on_available_on"
     t.index ["deleted_at"], name: "index_spree_products_on_deleted_at"
     t.index ["discontinue_on"], name: "index_spree_products_on_discontinue_on"
@@ -605,6 +619,23 @@ ActiveRecord::Schema.define(version: 20171027181252) do
     t.boolean  "resellable",                                               default: true,  null: false
     t.index ["customer_return_id"], name: "index_return_items_on_customer_return_id"
     t.index ["exchange_inventory_unit_id"], name: "index_spree_return_items_on_exchange_inventory_unit_id"
+  end
+
+  create_table "spree_reviews", force: :cascade do |t|
+    t.integer  "product_id"
+    t.string   "name"
+    t.string   "location"
+    t.integer  "rating"
+    t.text     "title"
+    t.text     "review"
+    t.boolean  "approved",        default: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
+    t.integer  "user_id"
+    t.string   "ip_address"
+    t.string   "locale",          default: "en"
+    t.boolean  "show_identifier", default: true
+    t.index ["show_identifier"], name: "index_spree_reviews_on_show_identifier"
   end
 
   create_table "spree_role_users", force: :cascade do |t|
