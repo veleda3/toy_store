@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171027184768) do
+ActiveRecord::Schema.define(version: 20171028040349) do
 
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string   "slug",                      null: false
@@ -24,6 +24,14 @@ ActiveRecord::Schema.define(version: 20171027184768) do
     t.index ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type"
     t.index ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id"
     t.index ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type"
+  end
+
+  create_table "newsletter_subscriptions", force: :cascade do |t|
+    t.string   "email"
+    t.boolean  "active",     default: true
+    t.text     "message"
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
   end
 
   create_table "spree_addresses", force: :cascade do |t|
@@ -136,6 +144,15 @@ ActiveRecord::Schema.define(version: 20171027184768) do
     t.datetime "updated_at",        null: false
   end
 
+  create_table "spree_favorites", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "product_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id", "product_id"], name: "index_spree_favorites_on_user_id_and_product_id", unique: true
+    t.index ["user_id"], name: "index_spree_favorites_on_user_id"
+  end
+
   create_table "spree_feedback_reviews", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "review_id",                 null: false
@@ -207,6 +224,14 @@ ActiveRecord::Schema.define(version: 20171027184768) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.index ["source_id", "source_type"], name: "index_spree_log_entries_on_source_id_and_source_type"
+  end
+
+  create_table "spree_newsletter_subscriptions", force: :cascade do |t|
+    t.string   "email"
+    t.boolean  "active",     default: true
+    t.text     "message"
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
   end
 
   create_table "spree_option_type_prototypes", force: :cascade do |t|
@@ -411,9 +436,11 @@ ActiveRecord::Schema.define(version: 20171027184768) do
     t.datetime "discontinue_on"
     t.decimal  "avg_rating",           precision: 7, scale: 5, default: "0.0", null: false
     t.integer  "reviews_count",                                default: 0,     null: false
+    t.integer  "favorite_users_count",                         default: 0
     t.index ["available_on"], name: "index_spree_products_on_available_on"
     t.index ["deleted_at"], name: "index_spree_products_on_deleted_at"
     t.index ["discontinue_on"], name: "index_spree_products_on_discontinue_on"
+    t.index ["favorite_users_count"], name: "index_spree_products_on_favorite_users_count"
     t.index ["name"], name: "index_spree_products_on_name"
     t.index ["shipping_category_id"], name: "index_spree_products_on_shipping_category_id"
     t.index ["slug"], name: "index_spree_products_on_slug", unique: true

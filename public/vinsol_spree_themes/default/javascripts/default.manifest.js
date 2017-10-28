@@ -27,4 +27,18 @@ $(document).on('ready', function() {
     $("#sidebar").toggleClass("sidebar_open");
   });
 
+  var distance = $(".header-top").offset().top;
+
+  $(window).on('scroll',bookingTop);
+
+  function bookingTop() {
+   valorScroll = $('html').scrollTop() || $('body').scrollTop();
+
+   if(valorScroll > distance) {
+    $('.header-top').css({'position':'fixed','top':'0'});
+   } else {
+    $('.header-top').css({'position':'relative'});
+   }
+  }
+
 });
