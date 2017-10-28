@@ -12,3 +12,7 @@
 //= require spree/frontend/spree_auth
 //= require spree/frontend/spree_themes
 //= require spree/frontend/spree_reviews
+
+//= require store/spree_favorite_products
+
+//= require spree/frontend/spree_favorite_products

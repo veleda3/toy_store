@@ -61,7 +61,7 @@
             <ul class="footer-nav">
               <li>
                 <%=link_to 'Contact Us', contact_us_path %></li>
-              <li><a href="javascript:void(0);">About Us</a></li>
+              <li><%=link_to 'About Us', about_us_path %></li>
             </ul>
           </div>
           <div class="col-sm-3">
@@ -69,9 +69,7 @@
               <span>Need Help</span>
             </h3>
             <ul class="footer-nav">
-              <li><a href="javascript:void(0);">Help &amp; FAQ</a></li>
-              <li><a href="javascript:void(0);">Track Order</a></li>
-              <li><a href="javascript:void(0);">Store Locator</a></li>
+              <li><%=link_to 'Help and FAQ', help_faq_path %></li>
             </ul>
           </div>
           <div class="col-sm-3">
@@ -79,10 +77,9 @@
               <span>More Info</span>
             </h3>
             <ul class="footer-nav">
-              <li><a href="javascript:void(0);">Blog</a></li>
-              <li><a href="javascript:void(0);">Careers</a></li>
-              <li><a href="javascript:void(0);">Privacy Policy</a></li>
-              <li><a href="javascript:void(0);">Terms of Use</a></li>
+              <!-- <li><a href="javascript:void(0);">Blog</a></li> -->
+              <li><%=link_to 'Privacy Policy', privacy_policy_path %></li>
+              <li><%=link_to 'Terms of Use', terms_of_use_path %></li>
             </ul>
           </div>
           <div class="col-sm-3">
