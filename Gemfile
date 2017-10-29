@@ -35,6 +35,8 @@ gem 'vinsol_spree_themes', git: 'https://github.com/vinsol-spree-contrib/spree_t
 gem 'spree_contact_us', :git => 'https://github.com/spree-contrib/spree_contact_us'
 gem 'spree_reviews', github: 'spree-contrib/spree_reviews'
 gem 'spree_favorite_products', github: 'vinsol-spree-contrib/spree_favorite_products', branch: '3-2-stable'
+gem 'paperclip'
+gem 'aws-sdk'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
