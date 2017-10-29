@@ -809,6 +809,7 @@ PLATFORMS
 
 DEPENDENCIES
   aws-sdk
+  bootstrap-sass
   byebug
   coffee-rails (~> 4.2)
   i18n
