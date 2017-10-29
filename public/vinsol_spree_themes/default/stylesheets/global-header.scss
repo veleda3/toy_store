@@ -231,14 +231,17 @@
   .navbar-nav > li {
     float: none;
   }
+
   .logo_area {
     width: auto;
-    background-color: $primary-white;
+    
     a {
       width: 200px;
       margin: 0 auto;
     }
   }
+
+
 
   .user_bar,
   .user_bar ul,
