@@ -5,14 +5,22 @@
         <div class="col-md-8 col-md-offset-2">
           <div class="text-center common-heading"> Subscribe to Our Newsletter </div>
           <p class="text-center">New products, New price deals, and new cool ideas for the christmas season!</p>
-          <% form_tag(newsletter_subscriptions_create_path, :method => "post") do %>
+          <%= form_tag(newsletter_subscriptions_create_path, :method => "post") do %>
+          <div class="row">
+            <div class="col-sm-5 form-group">
               <%= label_tag(:name, "Name:") %>
-              <%= text_field_tag(:name) %>
+              <%= text_field_tag(:name, nil, class:"form-control") %>
+            </div>
+            <div class="col-sm-5 form-group">
               <%= label_tag(:email, "Email:") %>
-              <%= text_field_tag(:email) %>
-              <%= submit_tag("Search") %>
+              <%= text_field_tag(:email, nil, class:"form-control") %>
+            </div>
+            <div class="col-sm-2 form-group">
+              <%= submit_tag("Search", class:"btn btn-block btn-subscribe") %>
+            </div>
+          </div>
           <% end %>
-          <form>
+          <!-- <form>
             <div class="row">
               <div class="col-sm-5 form-group">
                 <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
@@ -26,7 +34,7 @@
                 </button>
               </div>
             </div>
-          </form>
+          </form> -->
         </div>
       </div>
     </div>

@@ -13,6 +13,8 @@ Rails.application.routes.draw do
     get 'help_faq/index'
   end
 
+
+
   # namespace :spree do
   #   get 'newsletter_subscriptions/new'
   # end
@@ -29,7 +31,7 @@ Rails.application.routes.draw do
   #
   mount Spree::Core::Engine, at: '/'
   Spree::Core::Engine.add_routes do
-    post 'newsletter_subscriptions/create'
+    post 'newsletter_subscriptions/create', to: 'newsletter_subscriptions#create'
     get 'about_us', to: 'about_us#index'
     get 'help_faq', to: 'help_faq#index'
     get 'privacy_policy', to: 'privacy_policy#index'

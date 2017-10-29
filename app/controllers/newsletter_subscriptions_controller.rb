@@ -1,11 +1,9 @@
 class NewsletterSubscriptionsController < ApplicationController
   def new
-    newsletterSubscription = NewsletterSubscription.new
   end
 
   def create
     newsletterSubscription = NewsletterSubscription.new(newsletterSubscription_params)
-
   if newsletterSubscription.save
     redirect_to root_path, :flash => { notice: "Thank you for adding your info to our newsletter. We are looking forward to serving you." }
   else
