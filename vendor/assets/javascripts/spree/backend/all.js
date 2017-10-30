@@ -13,3 +13,4 @@
 //= require spree/backend/spree_reviews
 
 //= require admin/spree_favorite_products
+//= require spree/backend/spree_paypal_express
