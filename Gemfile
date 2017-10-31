@@ -38,6 +38,8 @@ gem 'spree_reviews', github: 'spree-contrib/spree_reviews'
 gem 'spree_favorite_products', github: 'vinsol-spree-contrib/spree_favorite_products', branch: '3-2-stable'
 gem 'paperclip'
 gem 'aws-sdk'
+gem 'spree_mail_settings', github: 'spree-contrib/spree_mail_settings'
+gem 'spree_paypal_express', github: 'spree-contrib/better_spree_paypal_express'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

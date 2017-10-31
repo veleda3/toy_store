@@ -16,25 +16,10 @@
               <%= text_field_tag(:email, nil, class:"form-control") %>
             </div>
             <div class="col-sm-2 form-group">
-              <%= submit_tag("Search", class:"btn btn-block btn-subscribe") %>
+              <%= submit_tag("Subscribe", class:"btn btn-block btn-subscribe") %>
             </div>
+            <% end %>
           </div>
-          <% end %>
-          <!-- <form>
-            <div class="row">
-              <div class="col-sm-5 form-group">
-                <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
-              </div>
-              <div class="col-sm-5 form-group">
-                <input type="text" class="form-control" id="inputEmail3" placeholder="Name">
-              </div>
-              <div class="col-sm-2 form-group">
-                <button class="btn btn-block btn-subscribe">
-                  SUBSCRIBE
-                </button>
-              </div>
-            </div>
-          </form> -->
         </div>
       </div>
     </div>
@@ -43,8 +28,10 @@
   <div class="container">
     <div class="row">
       <div class="col-sm-4">
-
-        <ul class="social">
+        <div id="logo" class="logo_area" data-hook>
+          <%= link_to (image_tag "vucciz_logo_flat", class: "logo-desktop"), root_path %>
+        </div>
+        <!-- <ul class="social">
           <li>
             <a href="javascript:void(0);" class="fa fa-facebook"></a>
           </li>
@@ -57,7 +44,7 @@
           <li>
             <a href="javascript:void(0);" class="fa fa-youtube-square"></a>
           </li>
-        </ul>
+        </ul> -->
 
       </div>
       <div class="col-sm-8">
@@ -69,7 +56,7 @@
             <ul class="footer-nav">
               <li>
                 <%=link_to 'Contact Us', contact_us_path %></li>
-              <li><%=link_to 'About Us', about_us_path %></li>
+              <!-- <li><%=link_to 'About Us', about_us_path %></li> -->
             </ul>
           </div>
           <div class="col-sm-3">
@@ -85,8 +72,7 @@
               <span>More Info</span>
             </h3>
             <ul class="footer-nav">
-              <!-- <li><a href="javascript:void(0);">Blog</a></li> -->
-              <li><%=link_to 'Privacy Policy', privacy_policy_path %></li>
+              <!-- <li><%=link_to 'Privacy Policy', privacy_policy_path %></li> -->
               <li><%=link_to 'Terms of Use', terms_of_use_path %></li>
             </ul>
           </div>
@@ -95,8 +81,7 @@
               <span>Get in Touch</span>
             </h3>
             <ul class="footer-nav">
-              <li><a href="javascript:void(0);">1800-xxxx-xxxx</a></li>
-              <li><a href="javascript:void(0);">help@example.com</a></li>
+              <li><a href="javascript:void(0);">contact@vucciz.com</a></li>
             </ul>
           </div>
         </div>
