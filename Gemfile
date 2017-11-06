@@ -39,6 +39,8 @@ gem 'paperclip'
 gem 'aws-sdk'
 gem 'spree_mail_settings', github: 'spree-contrib/spree_mail_settings'
 gem 'spree_paypal_express', github: 'spree-contrib/better_spree_paypal_express'
+gem "spree_product_hover_zoom", :git => "git://github.com/vinzloh/spree_product_hover_zoom.git"
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

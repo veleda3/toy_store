@@ -35,6 +35,14 @@ GIT
       spree_extension (~> 0.0.5)
 
 GIT
+  remote: git://github.com/vinzloh/spree_product_hover_zoom.git
+  revision: 5fb7973e465082fdd395a9028952ccc601c305b5
+  specs:
+    spree_product_hover_zoom (1.0.3)
+      spree_core (~> 3.2)
+      spree_frontend (~> 3.2)
+
+GIT
   remote: https://github.com/spree-contrib/spree_contact_us
   revision: 1c5dc62a363d978e6bc197e400b1e2122ac2916e
   specs:
@@ -851,6 +859,7 @@ DEPENDENCIES
   spree_gateway (= 3.2)
   spree_mail_settings!
   spree_paypal_express!
+  spree_product_hover_zoom!
   spree_reviews!
   spring
   spring-watcher-listen (~> 2.0.0)

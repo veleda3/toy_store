@@ -8,7 +8,8 @@
  *= require_self
  *= require_tree .
  *= require spree/frontend/spree_themes
- *= require spree/frontend/spree_reviews
  *= require store/spree_favorite_products
  *= require spree/frontend/spree_paypal_express
+ *= require luminous-basic
+ *= require spree/frontend/spree_product_hover_zoom
 */
